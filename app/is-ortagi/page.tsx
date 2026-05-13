@@ -206,7 +206,7 @@ export default function IsOrtagiPage() {
       <BusinessNavbar />
 
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden pt-44 pb-24">
+      <section className="relative overflow-hidden pt-24 md:pt-44 pb-24">
         <div
           className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)" }}

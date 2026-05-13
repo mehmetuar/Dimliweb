@@ -47,7 +47,7 @@ export default function IletisimPage() {
     <>
       <Navbar />
 
-      <main className="pt-36 pb-20">
+      <main className="pt-20 md:pt-36 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="mb-12 animate-fade-in">

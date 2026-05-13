@@ -156,7 +156,7 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section className="relative pt-44 pb-24 px-4 sm:px-6 overflow-hidden">
+        <section className="relative pt-24 md:pt-44 pb-24 px-4 sm:px-6 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-turf-500/5 rounded-full blur-3xl" />
           </div>
