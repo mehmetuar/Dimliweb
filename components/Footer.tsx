@@ -15,7 +15,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-8">
               <a
-                href="#"
+                href="https://www.instagram.com/dimliofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -33,7 +33,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://x.com/dimliapp"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
