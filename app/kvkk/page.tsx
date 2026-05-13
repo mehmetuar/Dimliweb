@@ -60,15 +60,16 @@ hukuki sebeplerine dayanılarak işlenmektedir.`,
 Yurt dışına veri aktarımı, KVKK'nın 9. maddesinde belirtilen güvenceler sağlandığında gerçekleştirilmektedir.
 
 **SMS Doğrulama Altyapısı:**
-Telefon numaranızı doğrulamak amacıyla kullanılan SMS hizmeti, **Netgsm Bilişim Hizmetleri A.Ş.** altyapısı üzerinden iletilmektedir. Bu hizmet kapsamında telefon numaranız yalnızca doğrulama kodunun iletilmesi için işlenmekte olup üçüncü taraflarla paylaşılmamaktadır.
+Telefon numaranızı doğrulamak amacıyla kullanılan SMS hizmeti, **Netgsm Bilişim Hizmetleri A.Ş.** altyapısı üzerinden iletilmektedir. Bu hizmet kapsamında telefon numaranız yalnızca doğrulama kodunun iletilmesi amacıyla işlenmekte olup başka amaçlarla kullanılmamaktadır.
 
-SMS mesajları, teknik altyapı gereklilikleri nedeniyle **"Seyda"** gönderen kimliğiyle (başlık/header) iletilmektedir. Bu gönderen adı Dimli uygulamasına ait teknik bir altyapı tanımlamasıdır; farklı bir kişi veya kuruluşla ilgisi bulunmamaktadır.`,
+SMS mesajları, **"Seyda"** gönderen adıyla (başlık/header) iletilmektedir. Bu gönderen adı, SMS altyapı hizmetinin sunulmasında kullanılan **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** unvanlı firmayı temsil etmektedir. Söz konusu firma, Dimli uygulamasının SMS iletim altyapısını sağlayan veri işleyen konumundadır; telefon numaranız bu firma aracılığıyla yalnızca doğrulama kodu iletimi için kullanılmaktadır.`,
   },
   {
     title: "6. Veri İşleyenler",
     content: `Hizmetin sunulması amacıyla aşağıdaki üçüncü taraf veri işleyenlerden yararlanılmaktadır:
 
-• **Netgsm Bilişim Hizmetleri A.Ş.** — Telefon numarası doğrulama (OTP) SMS hizmeti
+• **Netgsm Bilişim Hizmetleri A.Ş.** — SMS iletim altyapısı (OTP doğrulama)
+• **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** — Netgsm SMS hattı sahibi ve altyapı sağlayıcısı; "Seyda" gönderen adıyla SMS iletimi
 • **Bulut altyapı sağlayıcısı** — Uygulama sunucusu ve veritabanı hizmetleri
 
 Bu veri işleyenler, yalnızca hizmetin ifası için gerekli ölçüde ve KVKK ile uygulama gizlilik politikamız kapsamında veri işlemektedir.`,
