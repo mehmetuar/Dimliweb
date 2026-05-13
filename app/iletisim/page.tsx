@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "İletişim — Dimli",
@@ -27,7 +28,7 @@ const contactItems = [
       </svg>
     ),
     label: "Adres",
-    value: "[Şirket adresi buraya eklenecek]",
+    value: "Antalya, Türkiye",
     href: null,
   },
   {
@@ -95,89 +96,7 @@ export default function IletisimPage() {
           </div>
 
           {/* Contact form */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-pitch-surface border border-slate-700/50 animate-slide-up">
-            <h2 className="text-white font-bold text-xl mb-2">Mesaj Gönder</h2>
-            <p className="text-slate-400 text-sm mb-6">
-              Formu doldur, en kısa sürede geri dönelim. Genellikle 24 saat içinde yanıt veriyoruz.
-            </p>
-
-            <form
-              action={`mailto:destek@dimli.com.tr`}
-              method="get"
-              encType="text/plain"
-              className="space-y-4"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-slate-400 text-sm font-medium mb-1.5" htmlFor="name">
-                    Ad Soyad
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Adınızı girin"
-                    className="w-full px-4 py-3 rounded-xl bg-pitch border border-slate-700 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-turf-500 focus:ring-1 focus:ring-turf-500/20 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-slate-400 text-sm font-medium mb-1.5" htmlFor="email">
-                    E-posta
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="eposta@ornek.com"
-                    className="w-full px-4 py-3 rounded-xl bg-pitch border border-slate-700 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-turf-500 focus:ring-1 focus:ring-turf-500/20 transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-slate-400 text-sm font-medium mb-1.5" htmlFor="subject">
-                  Konu
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 rounded-xl bg-pitch border border-slate-700 text-white text-sm focus:outline-none focus:border-turf-500 focus:ring-1 focus:ring-turf-500/20 transition-colors appearance-none"
-                >
-                  <option value="">Konu seçin</option>
-                  <option value="destek">Teknik Destek</option>
-                  <option value="kvkk">KVKK / Veri Talebi</option>
-                  <option value="oneri">Öneri / Geri Bildirim</option>
-                  <option value="isbirligi">İş Birliği</option>
-                  <option value="diger">Diğer</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-slate-400 text-sm font-medium mb-1.5" htmlFor="message">
-                  Mesajınız
-                </label>
-                <textarea
-                  id="message"
-                  name="body"
-                  rows={5}
-                  placeholder="Mesajınızı buraya yazın..."
-                  className="w-full px-4 py-3 rounded-xl bg-pitch border border-slate-700 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-turf-500 focus:ring-1 focus:ring-turf-500/20 transition-colors resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-turf-600 to-turf-500 text-white font-bold text-sm hover:from-turf-500 hover:to-turf-400 transition-all shadow-neon-sm active:scale-[0.98]"
-              >
-                Mesaj Gönder
-              </button>
-
-              <p className="text-slate-600 text-xs text-center">
-                Mesaj gönderdiğinizde e-posta istemciniz açılacaktır.
-              </p>
-            </form>
-          </div>
-
+          <ContactForm />
         </div>
       </main>
 
