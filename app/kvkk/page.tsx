@@ -60,16 +60,18 @@ hukuki sebeplerine dayanılarak işlenmektedir.`,
 Yurt dışına veri aktarımı, KVKK'nın 9. maddesinde belirtilen güvenceler sağlandığında gerçekleştirilmektedir.
 
 **SMS Doğrulama Altyapısı:**
-Telefon numaranızı doğrulamak amacıyla kullanılan SMS hizmeti, **Netgsm Bilişim Hizmetleri A.Ş.** altyapısı üzerinden iletilmektedir. Bu hizmet kapsamında telefon numaranız yalnızca doğrulama kodunun iletilmesi amacıyla işlenmekte olup başka amaçlarla kullanılmamaktadır.
+Telefon numaranızı doğrulamak amacıyla kullanılan SMS hizmeti, BTK (Bilgi Teknolojileri ve İletişim Kurumu) lisanslı resmi operatör **Netgsm Bilişim Hizmetleri A.Ş.** altyapısı üzerinden iletilmektedir. Bu hizmet kapsamında telefon numaranız yalnızca doğrulama kodunun iletilmesi amacıyla işlenmekte olup başka amaçlarla kullanılmamaktadır.
 
-SMS mesajları, **"Seyda"** gönderen adıyla (başlık/header) iletilmektedir. Bu gönderen adı, SMS altyapı hizmetinin sunulmasında kullanılan **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** unvanlı firmayı temsil etmektedir. Söz konusu firma, Dimli uygulamasının SMS iletim altyapısını sağlayan veri işleyen konumundadır; telefon numaranız bu firma aracılığıyla yalnızca doğrulama kodu iletimi için kullanılmaktadır.`,
+SMS mesajları, **"N. UCAR"** gönderen adıyla (başlık/header) iletilmektedir. Bu gönderen adı, Netgsm'deki SMS hattını tutan **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** unvanlı firmaya ait hesabı temsil etmektedir. Söz konusu firma, Dimli uygulamasının bireysel geliştirici olarak doğrudan SMS hattı açamadığı dönemde bu hizmetin sunulabilmesi amacıyla kullanılan SMS altyapı hesap sahibidir.
+
+**Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ., kullanıcı verilerine erişmez;** telefon numaranız yalnızca Netgsm'nin teknik altyapısı üzerinden OTP kodu iletimi için kullanılır. Bu süreçte söz konusu firmaya herhangi bir kişisel veri aktarılmamaktadır.`,
   },
   {
     title: "6. Veri İşleyenler",
     content: `Hizmetin sunulması amacıyla aşağıdaki üçüncü taraf veri işleyenlerden yararlanılmaktadır:
 
-• **Netgsm Bilişim Hizmetleri A.Ş.** — SMS iletim altyapısı (OTP doğrulama)
-• **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** — Netgsm SMS hattı sahibi ve altyapı sağlayıcısı; "Seyda" gönderen adıyla SMS iletimi
+• **Netgsm Bilişim Hizmetleri A.Ş.** — BTK lisanslı SMS iletim altyapısı (OTP doğrulama); resmi kurumlar üzerinden yetkili operatör
+• **Seyda Tel İnşaat Mal. Emlak Otomotiv Tic. LTD ŞTİ.** — Netgsm SMS hattı hesap sahibi; "N. UCAR" gönderen adıyla teknik SMS iletim kanalı; kullanıcı verilerine erişimi bulunmamaktadır
 • **Bulut altyapı sağlayıcısı** — Uygulama sunucusu ve veritabanı hizmetleri
 
 Bu veri işleyenler, yalnızca hizmetin ifası için gerekli ölçüde ve KVKK ile uygulama gizlilik politikamız kapsamında veri işlemektedir.`,
