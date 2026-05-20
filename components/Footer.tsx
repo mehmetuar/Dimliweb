@@ -64,6 +64,11 @@ export default function Footer() {
                   KVKK / Gizlilik Politikası
                 </Link>
               </li>
+              <li>
+                <Link href="/kullanim-sartlari" className="text-slate-400 hover:text-turf-500 text-sm transition-colors">
+                  Kullanım Şartları
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -112,6 +117,9 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/kvkk" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">
               Gizlilik Politikası
+            </Link>
+            <Link href="/kullanim-sartlari" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">
+              Kullanım Şartları
             </Link>
             <Link href="/iletisim" className="text-slate-500 hover:text-slate-300 text-sm transition-colors">
               İletişim
