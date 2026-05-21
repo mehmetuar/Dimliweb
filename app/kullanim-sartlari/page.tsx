@@ -55,10 +55,23 @@ Yürürlükteki App Store veya Google Play iade politikaları geçerlidir. Dimli
 • Dimli'nin yazılı onayı olmaksızın içerikleri kopyalamamak, çoğaltmamak veya dağıtmamak`,
   },
   {
-    title: "6. Kullanıcı Tarafından Oluşturulan İçerik",
+    title: "6. Kullanıcı Tarafından Oluşturulan İçerik ve Moderasyon Politikası",
     content: `Kullanıcılar tarafından yüklenen profil bilgileri, yorumlar, puanlar ve maç verileri ("Kullanıcı İçeriği") üzerindeki haklar Kullanıcı'ya aittir. Ancak Kullanıcı, Dimli'ye bu içerikleri Platform dahilinde kullanma, görüntüleme ve dağıtma için geri alınamaz, ücretsiz bir lisans vermektedir.
 
-Dimli, topluluk kurallarını veya yürürlükteki mevzuatı ihlal eden içerikleri önceden bildirim yapmaksızın kaldırma hakkını saklı tutar.`,
+**Dimli, uygunsuz içerik ve kullanıcı davranışına sıfır tolerans politikası uygular.**
+
+Kullanıcılar aşağıdaki nitelikte içerik paylaşmamalıdır:
+
+• Hakaret, nefret söylemi, taciz veya tehdit içeren mesajlar
+• Müstehcen veya yasadışı materyaller
+• Başkalarının kişisel bilgileri veya rızasız paylaşılan içerikler
+• Spam, yanıltıcı bilgi veya dolandırıcılık amaçlı içerikler
+
+**Şikayet ve Engelleme Mekanizması**
+
+Kullanıcılar, uygunsuz içerikleri uygulama içindeki "Bildir" özelliğiyle doğrudan ekibimize iletebilir. Ayrıca istemedikleri kullanıcıları anında engelleyebilir; engellenen kullanıcının mesajları engelleyen kişinin beslemesinden derhal kaldırılır.
+
+Bildirilen içerikler **24 saat içinde** incelenir. Kural ihlali tespit edilen kullanıcılar platformdan çıkarılır, ilgili içerikler kaldırılır. Dimli, topluluk kurallarını veya yürürlükteki mevzuatı ihlal eden içerikleri önceden bildirim yapmaksızın kaldırma hakkını saklı tutar.`,
   },
   {
     title: "7. Fikri Mülkiyet",
