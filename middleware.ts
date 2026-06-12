@@ -8,5 +8,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|icon\\.png|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+  // .well-known (Universal Links/App Links doğrulama dosyaları) ve /invite
+  // (uygulama yüklü değilse açılan davet sayfası) bakım moduna takılmamalı.
+  matcher: ['/((?!_next/static|_next/image|icon\\.png|favicon\\.ico|.well-known|invite|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
 }
