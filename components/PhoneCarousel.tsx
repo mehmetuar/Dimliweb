@@ -7,7 +7,7 @@ const ITEMS = [
   { src: "/screenshots/rezervasyon.png",   label: "Rezervasyon",        desc: "Müsait saatleri gör, kolayca rezerve et" },
   { src: "/screenshots/joker_havuzu.png",  label: "Joker Havuzu",       desc: "Eksik oyuncu derdine son, joker bul" },
   { src: "/screenshots/sohbet_kesinlesti.png", label: "Takım Sohbeti",  desc: "Maç durumunu takımınla anlık paylaş" },
-  { src: "/screenshots/sohbet_karsilasma.png", label: "Rakiple İletişim", desc: "Rakip takımla detayları netleştir" },
+  { src: "/screenshots/rakiple_iletisim.png", label: "Rakiple İletişim", desc: "Rakip takımla detayları netleştir" },
   { src: "/screenshots/mac_degerlendirme.png", label: "Tesis Değerlendirme", desc: "Oynadığın sahayı puanla" },
   { src: "/screenshots/rakip_degerlendirme.png", label: "Rakip Değerlendirme", desc: "Rakip takımın fair play puanını ver" },
 ];
