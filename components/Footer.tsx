@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center">
-              <Image src="/icon.png" alt="Dimli" width={108} height={108} className="rounded-2xl" />
+              <Image src="/icon.png" alt="Dimli" width={48} height={48} className="w-12 h-12 rounded-xl" />
             </div>
             <p className="mt-3 text-slate-400 text-sm leading-relaxed">
               Türkiye'nin dijital halı saha platformu. Rakip bul, sahayı kirala, takımını yönet.
@@ -76,7 +76,7 @@ export default function Footer() {
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-4">Uygulamayı İndir</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/tr/app/dimli/id6764278538?l=tr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
@@ -90,7 +90,7 @@ export default function Footer() {
                 </div>
               </a>
               <a
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.dimli.app&hl=tr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"

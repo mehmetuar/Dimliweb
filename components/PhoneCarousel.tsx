@@ -4,11 +4,12 @@ import Image from "next/image";
 
 const ITEMS = [
   { src: "/screenshots/sahalar.png",       label: "Saha Bul",           desc: "Konumuna yakın sahayı anında keşfet" },
-  { src: "/screenshots/macpazari.png",     label: "Rakip Bul",          desc: "Anlık meydan okumayla saniyeler içinde" },
   { src: "/screenshots/rezervasyon.png",   label: "Rezervasyon",        desc: "Müsait saatleri gör, kolayca rezerve et" },
-  { src: "/screenshots/operasyon.png",     label: "Operasyon Merkezi",  desc: "Tüm maçlarını tek ekrandan yönet" },
-  { src: "/screenshots/sohbet.png",        label: "Takım Sohbeti",      desc: "Maç detaylarını takımınla anlık paylaş" },
-  { src: "/screenshots/degerlendirme.png", label: "Fair Play Puanı",    desc: "Maçtan sonra topluluk puanı kazan" },
+  { src: "/screenshots/joker_havuzu.png",  label: "Joker Havuzu",       desc: "Eksik oyuncu derdine son, joker bul" },
+  { src: "/screenshots/sohbet_kesinlesti.png", label: "Takım Sohbeti",  desc: "Maç durumunu takımınla anlık paylaş" },
+  { src: "/screenshots/sohbet_karsilasma.png", label: "Rakiple İletişim", desc: "Rakip takımla detayları netleştir" },
+  { src: "/screenshots/mac_degerlendirme.png", label: "Tesis Değerlendirme", desc: "Oynadığın sahayı puanla" },
+  { src: "/screenshots/rakip_degerlendirme.png", label: "Rakip Değerlendirme", desc: "Rakip takımın fair play puanını ver" },
 ];
 
 export default function PhoneCarousel() {

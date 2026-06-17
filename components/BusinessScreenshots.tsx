@@ -25,35 +25,47 @@ const SCREENSHOTS = [
   },
 ];
 
+const doubled = [...SCREENSHOTS, ...SCREENSHOTS];
+
 export default function BusinessScreenshots() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-      {SCREENSHOTS.map((shot) => (
-        <div key={shot.src} className="flex flex-col items-center gap-3">
-          <div
-            className="relative rounded-[2.8rem] overflow-hidden border-[3px] border-slate-700/80 bg-black"
-            style={{
-              width: 200,
-              height: 432,
-              boxShadow: "0 0 30px rgba(249,115,22,0.08), 0 20px 50px rgba(0,0,0,0.7)",
-            }}
-          >
-            {/* Dynamic Island */}
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10" />
-            <Image
-              src={shot.src}
-              alt={shot.label}
-              fill
-              className="object-cover object-top"
-              sizes="200px"
-            />
+    <div className="relative w-full overflow-hidden">
+      {/* Left fade */}
+      <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none" />
+      {/* Right fade */}
+      <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none" />
+
+      <div
+        className="animate-marquee flex gap-6 pb-4"
+        style={{ width: `calc(${doubled.length} * (200px + 24px))` }}
+      >
+        {doubled.map(({ src, label, desc }, i) => (
+          <div key={i} className="flex flex-col items-center gap-3 flex-shrink-0">
+            {/* Label above phone */}
+            <div className="text-center w-[200px]">
+              <div className="text-white font-bold text-sm">{label}</div>
+              <div className="text-slate-400 text-xs mt-0.5">{desc}</div>
+            </div>
+
+            {/* iPhone frame */}
+            <div
+              className="relative w-[200px] rounded-[2.8rem] bg-black border-[3px] border-slate-700/80 overflow-hidden"
+              style={{ boxShadow: "0 0 40px rgba(249,115,22,0.07), 0 20px 50px rgba(0,0,0,0.6)" }}
+            >
+              {/* Dynamic Island */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[80px] h-[24px] bg-black rounded-full z-10" />
+              <Image
+                src={src}
+                alt={label}
+                width={200}
+                height={432}
+                className="w-full h-[432px] object-cover object-top"
+                unoptimized
+              />
+            </div>
           </div>
-          <div className="text-center">
-            <p className="text-white font-bold text-sm">{shot.label}</p>
-            <p className="text-slate-500 text-xs mt-0.5">{shot.desc}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

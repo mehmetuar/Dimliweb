@@ -309,7 +309,8 @@ export default function IsOrtagiPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* 2-col on mobile, 3-col on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {FEATURES.map((f) => (
               <BusinessFeatureCard key={f.title} icon={f.icon} title={f.title} description={f.description} />
             ))}
@@ -360,17 +361,18 @@ export default function IsOrtagiPage() {
             </p>
           </div>
 
-          {/* 5-column pricing grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 items-start">
+          {/* Mobile: horizontal swipe / Desktop: 5-col grid */}
+          <div className="flex lg:grid lg:grid-cols-3 xl:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scroll-px-4 -mx-4 px-4 lg:mx-0 lg:px-0 items-start">
             {PLANS.map((plan) => (
-              <PricingCard
-                key={plan.planName}
-                pitchCount={plan.pitchCount}
-                planName={plan.planName}
-                price={plan.price}
-                features={plan.features}
-                popular={plan.popular}
-              />
+              <div key={plan.planName} className="flex-none w-[80vw] sm:w-[60vw] lg:w-auto snap-start">
+                <PricingCard
+                  pitchCount={plan.pitchCount}
+                  planName={plan.planName}
+                  price={plan.price}
+                  features={plan.features}
+                  popular={plan.popular}
+                />
+              </div>
             ))}
           </div>
 
