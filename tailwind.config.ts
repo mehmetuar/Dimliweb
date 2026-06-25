@@ -30,6 +30,8 @@ const config: Config = {
         "neon-ember": "0 0 12px rgba(249,115,22,0.5), 0 0 24px rgba(249,115,22,0.25)",
         "neon-ember-sm": "0 0 6px rgba(249,115,22,0.4)",
         "glow-ember": "0 0 40px rgba(249,115,22,0.25), 0 20px 50px rgba(0,0,0,0.6)",
+        "neon-lift": "0 24px 60px -12px rgba(34,197,94,0.45), 0 0 30px rgba(34,197,94,0.25)",
+        "neon-ember-lift": "0 24px 60px -12px rgba(249,115,22,0.45), 0 0 30px rgba(249,115,22,0.25)",
       },
       keyframes: {
         "fade-in": {

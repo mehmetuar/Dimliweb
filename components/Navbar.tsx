@@ -1,11 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+import { useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  NavAtmosphere,
+  ScoreboardLinks,
+  LogoBall,
+  KickoffButton,
+  type NavItem,
+} from "@/components/motion";
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Özellikler", href: "/#ozellikler" },
+  { label: "Nasıl Çalışır?", href: "/#nasil-calisir" },
+  { label: "İletişim", href: "/iletisim" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
 
   return (
     <>
@@ -17,32 +33,28 @@ export default function Navbar() {
         />
       )}
 
-      <nav className="fixed top-0 inset-x-0 z-50 bg-pitch/85 backdrop-blur-md border-b border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-28">
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+          scrolled
+            ? "bg-pitch/95 border-slate-800 shadow-lg shadow-black/30"
+            : "bg-pitch/85 border-slate-800/80"
+        }`}
+      >
+        <NavAtmosphere theme="turf" />
 
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/icon.png"
-              alt="Dimli"
-              width={108}
-              height={108}
-              className="w-10 h-10 md:w-[108px] md:h-[108px] rounded-xl md:rounded-2xl object-contain"
-            />
+        <div
+          className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "h-14 md:h-20" : "h-16 md:h-28"
+          }`}
+        >
+          <Link href="/" className="flex items-center" aria-label="Dimli ana sayfa">
+            <LogoBall theme="turf" scrolled={scrolled} />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-10">
-            <Link href="/#ozellikler" className="text-slate-300 hover:text-white text-base font-semibold transition-colors">
-              Özellikler
-            </Link>
-            <Link href="/#nasil-calisir" className="text-slate-300 hover:text-white text-base font-semibold transition-colors">
-              Nasıl Çalışır?
-            </Link>
-            <Link href="/iletisim" className="text-slate-300 hover:text-white text-base font-semibold transition-colors">
-              İletişim
-            </Link>
-          </div>
+          {/* Desktop nav links */}
+          <ScoreboardLinks theme="turf" items={NAV_ITEMS} />
 
+          {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/is-ortagi"
@@ -53,19 +65,22 @@ export default function Navbar() {
               </svg>
               Dimli İş Ortağı
             </Link>
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-turf-600 to-turf-500 text-white text-base font-bold hover:from-turf-500 hover:to-turf-400 transition-all shadow-neon-sm"
-            >
-              İletişim
-            </Link>
+            <KickoffButton>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-turf-600 to-turf-500 text-white text-base font-bold hover:from-turf-500 hover:to-turf-400 transition-all shadow-neon-sm"
+              >
+                İletişim
+              </Link>
+            </KickoffButton>
           </div>
 
           {/* Mobile burger */}
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-700/70 border border-slate-700/60 transition-all"
             onClick={() => setOpen(!open)}
-            aria-label="Menüyü aç"
+            aria-expanded={open}
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {open ? (
@@ -79,8 +94,10 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden animate-menu-in bg-pitch-surface border-t border-slate-800 px-5 py-5 flex flex-col">
-
+          <div
+            className="relative z-10 md:hidden animate-menu-in bg-pitch-surface border-t border-slate-800 px-5 py-5 flex flex-col"
+            style={{ paddingBottom: "max(20px, env(safe-area-inset-bottom))" }}
+          >
             {/* Nav links */}
             <div className="flex flex-col">
               <Link

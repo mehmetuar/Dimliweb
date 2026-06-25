@@ -1,6 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PhoneCarousel from "@/components/PhoneCarousel";
+import {
+  Reveal,
+  Stagger,
+  StaggerItem,
+  FadeIn,
+  Parallax,
+  AuroraBackground,
+  Tilt3DCard,
+  MagneticButton,
+  FloatChip,
+} from "@/components/motion";
 
 const features = [
   {
@@ -156,63 +167,83 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="relative pt-24 md:pt-44 pb-20 px-4 sm:px-6 overflow-hidden">
-          {/* Background glow */}
-          <div className="absolute inset-0 pointer-events-none">
+          {/* Background aurora + parallax glow */}
+          <AuroraBackground variant="turf" />
+          <Parallax speed={70} className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-turf-500/5 rounded-full blur-3xl" />
             <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-turf-600/3 rounded-full blur-3xl" />
-          </div>
+          </Parallax>
 
           <div className="relative max-w-6xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <div className="max-w-3xl mx-auto text-center">
 
               {/* Premium platform badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
-                style={{
-                  background: "linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.04) 100%)",
-                  border: "1px solid rgba(34,197,94,0.2)",
-                }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-turf-500 opacity-60" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-turf-500" />
-                </span>
-                <span className="text-turf-400 text-sm font-semibold tracking-wide">
-                  Türkiye&apos;nin Dijital Halı Saha Platformu
-                </span>
-              </div>
+              <FadeIn delay={0}>
+                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.04) 100%)",
+                    border: "1px solid rgba(34,197,94,0.2)",
+                  }}
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-turf-500 opacity-60" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-turf-500" />
+                  </span>
+                  <span className="text-turf-400 text-sm font-semibold tracking-wide">
+                    Türkiye&apos;nin Dijital Halı Saha Platformu
+                  </span>
+                </div>
+              </FadeIn>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] mb-5">
-                Halı Sahanın hikayesi{" "}
-                <span className="text-turf-500">Dimli&apos;de başlar.</span>
-              </h1>
+              <FadeIn delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] mb-5">
+                  Halı Sahanın hikayesi{" "}
+                  <span className="text-turf-500">Dimli&apos;de başlar.</span>
+                </h1>
+              </FadeIn>
 
-              <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10 max-w-xl mx-auto">
-                Saha kirala, takım yönet, joker bul, fair play kazan. Tek uygulama, tam deneyim.
-              </p>
+              <FadeIn delay={0.2}>
+                <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-10 max-w-xl mx-auto">
+                  Saha kirala, takım yönet, joker bul, fair play kazan. Tek uygulama, tam deneyim.
+                </p>
+              </FadeIn>
 
               {/* Store buttons — visually differentiated */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-                <AppStoreBadge className="w-full sm:w-auto" />
-                <GooglePlayBadge className="w-full sm:w-auto" />
-              </div>
+              <FadeIn delay={0.3}>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+                  <MagneticButton className="w-full sm:w-auto">
+                    <AppStoreBadge className="w-full" />
+                  </MagneticButton>
+                  <MagneticButton className="w-full sm:w-auto">
+                    <GooglePlayBadge className="w-full" />
+                  </MagneticButton>
+                </div>
+              </FadeIn>
 
               {/* Social proof micro-text */}
-              <p className="mt-5 text-slate-500 text-xs">
-                iOS &amp; Android · Ücretsiz · Türkiye geneli
-              </p>
+              <FadeIn delay={0.4}>
+                <p className="mt-5 text-slate-500 text-xs">
+                  iOS &amp; Android · Ücretsiz · Türkiye geneli
+                </p>
+              </FadeIn>
             </div>
 
             {/* Phone showcase */}
-            <div className="mt-16 animate-slide-up">
+            <FadeIn delay={0.5} className="mt-16 relative">
               <PhoneCarousel />
-            </div>
+              {/* Yüzen futbol rozetleri (dekoratif — telefon kenarlarında, label bandından uzak) */}
+              <FloatChip accent="turf" label="⚽ GOL!" index={0} style={{ top: "30%", left: "-1%" }} />
+              <FloatChip accent="turf" label="REZERVE ✓" index={1} style={{ top: "22%", right: "-1%" }} />
+              <FloatChip accent="turf" label="JOKER BULUNDU" index={2} style={{ bottom: "18%", left: "2%" }} />
+              <FloatChip accent="turf" label="4.8 ★ Fair Play" index={3} style={{ bottom: "12%", right: "2%" }} />
+            </FadeIn>
           </div>
         </section>
 
         {/* Features */}
         <section id="ozellikler" className="py-20 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
+            <Reveal className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-black mb-4">
                 Halı sahada ihtiyacın olan{" "}
                 <span className="text-turf-500">her şey</span>
@@ -220,30 +251,29 @@ export default function Home() {
               <p className="text-slate-400 text-base max-w-xl mx-auto">
                 Dimli, maçtan önce ve sonra tüm süreçleri tek bir uygulamada toplar.
               </p>
-            </div>
+            </Reveal>
 
             {/* 2×2 on mobile, 4 cols on desktop */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {features.map((f) => (
-                <div
-                  key={f.title}
-                  className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-pitch-surface border border-slate-700/50 hover:border-turf-500/40 hover:bg-slate-800/60 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-turf-500/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-turf-500/20 transition-colors">
-                    <div className="text-turf-500">{f.icon}</div>
-                  </div>
-                  <h3 className="text-white font-bold text-sm sm:text-base mb-1.5 w-full">{f.title}</h3>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed w-full">{f.description}</p>
-                </div>
+                <StaggerItem key={f.title}>
+                  <Tilt3DCard glow="turf" className="group h-full flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl bg-pitch-surface border border-slate-700/50 hover:border-turf-500/40 hover:bg-slate-800/60 transition-colors duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-turf-500/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-turf-500/20 transition-colors">
+                      <div className="text-turf-500">{f.icon}</div>
+                    </div>
+                    <h3 className="text-white font-bold text-sm sm:text-base mb-1.5 w-full">{f.title}</h3>
+                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed w-full">{f.description}</p>
+                  </Tilt3DCard>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
 
         {/* How it works */}
         <section id="nasil-calisir" className="py-20 px-4 sm:px-6 bg-pitch-surface/30">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-10">
+            <Reveal className="text-center mb-10">
               <h2 className="text-3xl sm:text-4xl font-black mb-4">
                 Sahaya çıkana kadar{" "}
                 <span className="text-turf-500">her adım burada</span>
@@ -251,35 +281,34 @@ export default function Home() {
               <p className="text-slate-400 text-base max-w-xl mx-auto">
                 Takımını kur, sahayı bul, maçı ayarla — Dimli tüm süreci yönetir.
               </p>
-            </div>
+            </Reveal>
 
             {/* Mobile: horizontal scroll snap / Desktop: 3-col grid */}
-            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <Stagger className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0">
               {steps.map((step, index) => (
-                <div
-                  key={step.number}
-                  className="relative p-5 sm:p-6 rounded-2xl bg-pitch-surface border border-slate-700/50 hover:border-turf-500/30 transition-colors group flex-none w-[72vw] sm:w-auto snap-start"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-turf-500/10 border border-turf-500/20 flex items-center justify-center text-turf-500 group-hover:bg-turf-500/15 transition-colors">
-                      {step.icon}
+                <StaggerItem key={step.number} className="flex-none w-[72vw] sm:w-auto snap-start">
+                  <Tilt3DCard glow="turf" intensity={6} className="h-full p-5 sm:p-6 rounded-2xl bg-pitch-surface border border-slate-700/50 hover:border-turf-500/30 transition-colors group">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-turf-500/10 border border-turf-500/20 flex items-center justify-center text-turf-500 group-hover:bg-turf-500/15 transition-colors">
+                        {step.icon}
+                      </div>
+                      <span className="text-4xl font-black text-turf-500/12 leading-none select-none">{step.number}</span>
                     </div>
-                    <span className="text-4xl font-black text-turf-500/12 leading-none select-none">{step.number}</span>
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-1.5">{step.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
-                  {index === steps.length - 1 && (
-                    <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-turf-500/40 to-transparent rounded-b-2xl" />
-                  )}
-                </div>
+                    <h3 className="text-base font-bold text-white mb-1.5">{step.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
+                    {index === steps.length - 1 && (
+                      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-turf-500/40 to-transparent rounded-b-2xl" />
+                    )}
+                  </Tilt3DCard>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
 
         {/* CTA */}
         <section className="py-24 px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <Reveal className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-black mb-5">
               Sahaya çıkmaya{" "}
               <span className="text-turf-500">hazır mısın?</span>
@@ -288,10 +317,14 @@ export default function Home() {
               Binlerce takım ve oyuncu seni bekliyor. Dimli&apos;yi indir, takımını oluştur.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-              <AppStoreBadge className="w-full sm:w-auto" />
-              <GooglePlayBadge className="w-full sm:w-auto" />
+              <MagneticButton className="w-full sm:w-auto">
+                <AppStoreBadge className="w-full" />
+              </MagneticButton>
+              <MagneticButton className="w-full sm:w-auto">
+                <GooglePlayBadge className="w-full" />
+              </MagneticButton>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
 

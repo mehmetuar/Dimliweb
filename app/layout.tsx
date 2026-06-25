@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={inter.className}>
-      <body className="min-h-screen bg-pitch text-white antialiased">{children}</body>
+      <body className="min-h-screen bg-pitch text-white antialiased">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

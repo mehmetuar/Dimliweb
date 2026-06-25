@@ -1,11 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+import { useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  NavAtmosphere,
+  ScoreboardLinks,
+  LogoBall,
+  KickoffButton,
+  type NavItem,
+} from "@/components/motion";
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Özellikler", href: "#ozellikler" },
+  { label: "Fiyatlandırma", href: "#fiyatlandirma" },
+  { label: "Nasıl Başlanır?", href: "#nasil-baslanir" },
+  { label: "Ana Sayfa", href: "/", muted: true },
+];
 
 export default function BusinessNavbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
 
   return (
     <>
@@ -17,47 +34,45 @@ export default function BusinessNavbar() {
         />
       )}
 
-      <nav className="fixed top-0 inset-x-0 z-50 bg-pitch/80 backdrop-blur-md border-b border-ember-500/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-28">
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+          scrolled
+            ? "bg-pitch/95 border-ember-500/30 shadow-lg shadow-black/30"
+            : "bg-pitch/80 border-ember-500/20"
+        }`}
+      >
+        <NavAtmosphere theme="ember" />
 
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/icon.png"
-              alt="Dimli"
-              width={108}
-              height={108}
-              className="w-9 h-9 md:w-[108px] md:h-[108px] rounded-xl md:rounded-2xl object-contain"
-            />
+        <div
+          className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "h-14 md:h-20" : "h-16 md:h-28"
+          }`}
+        >
+          <Link href="/" className="flex items-center" aria-label="Dimli ana sayfa">
+            <LogoBall theme="ember" scrolled={scrolled} />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-10">
-            <Link href="#ozellikler" className="text-slate-300 hover:text-ember-400 text-base font-semibold transition-colors">
-              Özellikler
-            </Link>
-            <Link href="#fiyatlandirma" className="text-slate-300 hover:text-ember-400 text-base font-semibold transition-colors">
-              Fiyatlandırma
-            </Link>
-            <Link href="#nasil-baslanir" className="text-slate-300 hover:text-ember-400 text-base font-semibold transition-colors">
-              Nasıl Başlanır?
-            </Link>
-            <Link href="/" className="text-slate-400 hover:text-white text-base font-semibold transition-colors">
-              Ana Sayfa
-            </Link>
+          {/* Desktop nav links */}
+          <ScoreboardLinks theme="ember" items={NAV_ITEMS} />
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center">
+            <KickoffButton>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-ember-600 to-ember-500 text-white text-base font-bold hover:from-ember-500 hover:to-ember-400 transition-all shadow-neon-ember-sm"
+              >
+                İletişime Geç
+              </Link>
+            </KickoffButton>
           </div>
-
-          <Link
-            href="/iletisim"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-ember-600 to-ember-500 text-white text-base font-bold hover:from-ember-500 hover:to-ember-400 transition-all shadow-neon-ember-sm"
-          >
-            İletişime Geç
-          </Link>
 
           {/* Mobile burger */}
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all"
             onClick={() => setOpen(!open)}
-            aria-label="Menüyü aç"
+            aria-expanded={open}
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {open ? (
@@ -71,8 +86,10 @@ export default function BusinessNavbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden animate-menu-in bg-pitch-surface border-t border-ember-500/20 px-5 py-5 flex flex-col">
-
+          <div
+            className="relative z-10 md:hidden animate-menu-in bg-pitch-surface border-t border-ember-500/20 px-5 py-5 flex flex-col"
+            style={{ paddingBottom: "max(20px, env(safe-area-inset-bottom))" }}
+          >
             {/* Nav links */}
             <div className="flex flex-col">
               <Link

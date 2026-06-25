@@ -5,6 +5,19 @@ import BusinessScreenshots from "@/components/BusinessScreenshots";
 import PricingCard from "@/components/PricingCard";
 import { AppStoreBadge, GooglePlayBadge } from "@/components/StoreBadges";
 import Footer from "@/components/Footer";
+import {
+  Reveal,
+  Stagger,
+  StaggerItem,
+  FadeIn,
+  CountUp,
+  Parallax,
+  AuroraBackground,
+  Tilt3DCard,
+  MagneticButton,
+  Phone3D,
+  FloatChip,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Dimli İş Ortağı — Halı Sahanı Dimli'ye Taşı",
@@ -207,90 +220,123 @@ export default function IsOrtagiPage() {
 
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden pt-24 md:pt-44 pb-24">
-        <div
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)" }}
-        />
+        <AuroraBackground variant="ember" />
+        <Parallax speed={70} className="absolute inset-0 pointer-events-none">
+          <div
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)" }}
+          />
+        </Parallax>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Left: copy */}
-            <div className="animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/30 text-ember-400 text-sm font-bold mb-8">
-                <span className="w-2 h-2 rounded-full bg-ember-500 animate-pulse" />
-                Halı Saha Yönetim Platformu
-              </div>
+            <div>
+              <FadeIn delay={0}>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/30 text-ember-400 text-sm font-bold mb-8">
+                  <span className="w-2 h-2 rounded-full bg-ember-500 animate-pulse" />
+                  Halı Saha Yönetim Platformu
+                </div>
+              </FadeIn>
 
-              <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-6">
-                İşletmeni{" "}
-                <span className="text-ember-500">Dimli&apos;ye</span>{" "}
-                Taşı
-              </h1>
+              <FadeIn delay={0.1}>
+                <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-6">
+                  İşletmeni{" "}
+                  <span className="text-ember-500">Dimli&apos;ye</span>{" "}
+                  Taşı
+                </h1>
+              </FadeIn>
 
-              <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-lg">
-                Rezervasyonlarını yönet, gelirinizi takip et, müşteri memnuniyetini artır.
-                Tüm bunları tek bir panelden, telefonu bırakmadan.
-              </p>
+              <FadeIn delay={0.2}>
+                <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-lg">
+                  Rezervasyonlarını yönet, gelirinizi takip et, müşteri memnuniyetini artır.
+                  Tüm bunları tek bir panelden, telefonu bırakmadan.
+                </p>
+              </FadeIn>
 
-              <p className="text-slate-500 text-sm mb-5 font-medium">
-                Dimli uygulamasını indir, işletme paneliyle hemen başla:
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <AppStoreBadge />
-                <GooglePlayBadge />
-              </div>
+              <FadeIn delay={0.3}>
+                <p className="text-slate-500 text-sm mb-5 font-medium">
+                  Dimli uygulamasını indir, işletme paneliyle hemen başla:
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <MagneticButton>
+                    <AppStoreBadge />
+                  </MagneticButton>
+                  <MagneticButton>
+                    <GooglePlayBadge />
+                  </MagneticButton>
+                </div>
+              </FadeIn>
 
               {/* Trust strip */}
-              <div className="flex items-center gap-6 mt-10 pt-10 border-t border-slate-800">
-                <div className="text-center">
-                  <p className="text-2xl font-black text-ember-400">500+</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Aktif İşletme</p>
+              <FadeIn delay={0.4}>
+                <div className="flex items-center gap-6 mt-10 pt-10 border-t border-slate-800">
+                  <div className="text-center">
+                    <p className="text-2xl font-black text-ember-400">
+                      <CountUp to={500} suffix="+" />
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">Aktif İşletme</p>
+                  </div>
+                  <div className="w-px h-10 bg-slate-800" />
+                  <div className="text-center">
+                    <p className="text-2xl font-black text-ember-400">
+                      <CountUp to={4.8} decimals={1} suffix="/5" />
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">İşletme Puanı</p>
+                  </div>
+                  <div className="w-px h-10 bg-slate-800" />
+                  <div className="text-center">
+                    <p className="text-2xl font-black text-ember-400">
+                      <CountUp to={3} suffix=" Ay" />
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">Ücretsiz Deneme</p>
+                  </div>
                 </div>
-                <div className="w-px h-10 bg-slate-800" />
-                <div className="text-center">
-                  <p className="text-2xl font-black text-ember-400">4.8/5</p>
-                  <p className="text-xs text-slate-500 mt-0.5">İşletme Puanı</p>
-                </div>
-                <div className="w-px h-10 bg-slate-800" />
-                <div className="text-center">
-                  <p className="text-2xl font-black text-ember-400">3 Ay</p>
-                  <p className="text-xs text-slate-500 mt-0.5">Ücretsiz Deneme</p>
-                </div>
-              </div>
+              </FadeIn>
             </div>
 
-            {/* Right: screenshots 2×2 */}
-            <div className="hidden lg:flex justify-center animate-slide-up">
-              <div className="grid grid-cols-2 gap-4">
+            {/* Right: screenshots 2×2 — sinematik 3D */}
+            <div className="relative hidden lg:flex justify-center">
+              <div className="grid grid-cols-2 gap-6">
                 {[
                   { src: "/isletme/isletme1.png", label: "Kolay Giriş" },
                   { src: "/isletme/isletme.png", label: "Rezervasyon" },
                   { src: "/isletme/isletme3.png", label: "İstatistik" },
                   { src: "/isletme/isletme2.png", label: "Abonelik" },
                 ].map((shot, i) => (
-                  <div key={shot.src} className="flex flex-col items-center gap-2">
-                    <div
-                      className="relative rounded-[2.4rem] overflow-hidden border-[3px] border-slate-700/80 bg-black"
-                      style={{
-                        width: 160,
-                        height: 347,
-                        transform: i % 2 === 1 ? "translateY(24px)" : undefined,
-                        boxShadow: "0 0 24px rgba(249,115,22,0.08), 0 16px 40px rgba(0,0,0,0.7)",
-                      }}
-                    >
-                      <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full z-10" />
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={shot.src}
-                        alt={shot.label}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
+                  <div
+                    key={shot.src}
+                    className="flex flex-col items-center gap-2"
+                    style={{ transform: i % 2 === 1 ? "translateY(24px)" : undefined }}
+                  >
+                    <Phone3D accent="ember" index={i} tiltMax={9} radiusClass="rounded-[2.4rem]">
+                      <div
+                        className="relative rounded-[2.4rem] overflow-hidden border-[3px] border-slate-700/80 bg-black"
+                        style={{
+                          width: 160,
+                          height: 347,
+                          boxShadow: "0 0 24px rgba(249,115,22,0.08), 0 16px 40px rgba(0,0,0,0.7)",
+                        }}
+                      >
+                        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full z-10" />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={shot.src}
+                          alt={shot.label}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
+                    </Phone3D>
                     <p className="text-xs text-slate-500 font-medium">{shot.label}</p>
                   </div>
                 ))}
               </div>
+
+              {/* Yüzen futbol/işletme rozetleri (dekoratif) */}
+              <FloatChip accent="ember" label="YENİ REZERVASYON" index={0} style={{ top: "4%", left: "-2%" }} />
+              <FloatChip accent="ember" label="4.9 ★" index={1} style={{ top: "42%", right: "-4%" }} />
+              <FloatChip accent="ember" label="DOLULUK ↑" index={2} style={{ bottom: "2%", left: "4%" }} />
             </div>
           </div>
         </div>
@@ -299,7 +345,7 @@ export default function IsOrtagiPage() {
       {/* ─── FEATURES ─── */}
       <section id="ozellikler" className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/20 text-ember-400 text-sm font-bold mb-5">
               Neler Sunuyoruz?
             </div>
@@ -307,21 +353,23 @@ export default function IsOrtagiPage() {
             <p className="text-slate-400 max-w-xl mx-auto">
               Dimli İş Ortağı paneli, halı saha yönetiminin her adımını kolaylaştırmak için tasarlandı.
             </p>
-          </div>
+          </Reveal>
 
           {/* 2-col on mobile, 3-col on desktop */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <Stagger className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {FEATURES.map((f) => (
-              <BusinessFeatureCard key={f.title} icon={f.icon} title={f.title} description={f.description} />
+              <StaggerItem key={f.title} className="h-full">
+                <BusinessFeatureCard icon={f.icon} title={f.title} description={f.description} />
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* ─── SCREENSHOTS SHOWCASE ─── */}
       <section className="py-24 bg-pitch-surface/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/20 text-ember-400 text-sm font-bold mb-5">
               Uygulama İçi Görünüm
             </div>
@@ -329,7 +377,7 @@ export default function IsOrtagiPage() {
             <p className="text-slate-400 max-w-xl mx-auto">
               Karmaşık yazılımlara gerek yok. Dimli İş Ortağı uygulaması her şeyi parmaklarının ucuna taşır.
             </p>
-          </div>
+          </Reveal>
           <BusinessScreenshots />
         </div>
       </section>
@@ -337,7 +385,7 @@ export default function IsOrtagiPage() {
       {/* ─── PRICING ─── */}
       <section id="fiyatlandirma" className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-6">
+          <Reveal className="text-center mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/20 text-ember-400 text-sm font-bold mb-5">
               Fiyatlandırma
             </div>
@@ -347,7 +395,7 @@ export default function IsOrtagiPage() {
               <span className="text-white font-semibold">Kaç sahanız varsa o plana abone olursunuz.</span>{" "}
               Abonelik uygulama içi satın alma ile yapılır — App Store veya Google Play üzerinden güvenli ödeme.
             </p>
-          </div>
+          </Reveal>
 
           {/* In-app purchase note */}
           <div className="flex items-start gap-3 max-w-2xl mx-auto mb-12 p-4 rounded-xl bg-ember-500/5 border border-ember-500/20">
@@ -362,19 +410,21 @@ export default function IsOrtagiPage() {
           </div>
 
           {/* Mobile: horizontal swipe / Desktop: 5-col grid */}
-          <div className="flex lg:grid lg:grid-cols-3 xl:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scroll-px-4 -mx-4 px-4 lg:mx-0 lg:px-0 items-start">
+          <Stagger stagger={0.06} className="flex lg:grid lg:grid-cols-3 xl:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scroll-px-4 -mx-4 px-4 lg:mx-0 lg:px-0 items-start">
             {PLANS.map((plan) => (
-              <div key={plan.planName} className="flex-none w-[80vw] sm:w-[60vw] lg:w-auto snap-start">
-                <PricingCard
-                  pitchCount={plan.pitchCount}
-                  planName={plan.planName}
-                  price={plan.price}
-                  features={plan.features}
-                  popular={plan.popular}
-                />
-              </div>
+              <StaggerItem key={plan.planName} className="flex-none w-[80vw] sm:w-[60vw] lg:w-auto snap-start">
+                <Tilt3DCard glow="ember" intensity={6} className="rounded-2xl">
+                  <PricingCard
+                    pitchCount={plan.pitchCount}
+                    planName={plan.planName}
+                    price={plan.price}
+                    features={plan.features}
+                    popular={plan.popular}
+                  />
+                </Tilt3DCard>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
 
           {/* Example box */}
           <div className="mt-10 p-6 rounded-2xl bg-pitch-surface/40 border border-slate-700/50 max-w-2xl mx-auto">
@@ -399,7 +449,7 @@ export default function IsOrtagiPage() {
       {/* ─── HOW TO START ─── */}
       <section id="nasil-baslanir" className="py-24 bg-pitch-surface/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
+          <Reveal className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ember-500/10 border border-ember-500/20 text-ember-400 text-sm font-bold mb-5">
               Başlangıç Rehberi
             </div>
@@ -407,43 +457,46 @@ export default function IsOrtagiPage() {
             <p className="text-slate-400 max-w-xl mx-auto">
               Kayıt işlemi dakikalar alıyor. Her şey Dimli uygulaması üzerinden yapılır — ayrı bir sisteme gerek yok.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-4">
-            {STEPS.map((step, i) => (
-              <div
-                key={step.number}
-                className="flex items-start gap-5 p-5 rounded-2xl border border-slate-700/50 bg-pitch-surface/40 hover:border-ember-500/30 transition-all"
-              >
-                <div className="w-12 h-12 rounded-xl bg-ember-500/10 border border-ember-500/20 flex items-center justify-center text-ember-500 shrink-0">
-                  {step.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-1">
-                    <span className="text-ember-500/50 text-sm font-black">{step.number}</span>
-                    <h3 className="text-white font-bold text-base">{step.title}</h3>
+          <Stagger className="flex flex-col gap-4">
+            {STEPS.map((step) => (
+              <StaggerItem key={step.number}>
+                <Tilt3DCard
+                  glow="ember"
+                  intensity={5}
+                  className="flex items-start gap-5 p-5 rounded-2xl border border-slate-700/50 bg-pitch-surface/40 hover:border-ember-500/30 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-ember-500/10 border border-ember-500/20 flex items-center justify-center text-ember-500 shrink-0">
+                    {step.icon}
                   </div>
-                  <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
-                </div>
-                {i < STEPS.length - 1 && (
-                  <div className="hidden sm:flex items-center self-center">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-ember-500/50 text-sm font-black">{step.number}</span>
+                      <h3 className="text-white font-bold text-base">{step.title}</h3>
+                    </div>
+                    <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
                   </div>
-                )}
-              </div>
+                </Tilt3DCard>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
 
           {/* Download CTA under steps */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            <AppStoreBadge />
-            <GooglePlayBadge />
+            <MagneticButton>
+              <AppStoreBadge />
+            </MagneticButton>
+            <MagneticButton>
+              <GooglePlayBadge />
+            </MagneticButton>
           </div>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
       <section className="py-24">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <Reveal className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <div
             className="p-10 rounded-3xl border border-ember-500/20 bg-pitch-surface/30"
             style={{ boxShadow: "0 0 60px rgba(249,115,22,0.08)" }}
@@ -469,11 +522,15 @@ export default function IsOrtagiPage() {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <AppStoreBadge />
-              <GooglePlayBadge />
+              <MagneticButton>
+                <AppStoreBadge />
+              </MagneticButton>
+              <MagneticButton>
+                <GooglePlayBadge />
+              </MagneticButton>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <Footer />
