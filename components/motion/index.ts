@@ -22,4 +22,3 @@ export { default as ChalkUnderline } from "./ChalkUnderline";
 export { default as LogoBall } from "./LogoBall";
 export { default as KickoffButton } from "./KickoffButton";
 export { default as Phone3D } from "./Phone3D";
-export { default as FloatChip } from "./FloatChip";

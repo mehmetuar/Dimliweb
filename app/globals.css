@@ -56,25 +56,13 @@ body {
   animation-play-state: paused;
 }
 
-/* Stadyum projektör süpürmesi — telefon marquee'leri üstünde dekoratif ışık şeridi. */
-@keyframes floodlight-sweep {
-  0%   { transform: translateX(-160%) skewX(-12deg); opacity: 0; }
-  50%  { opacity: 0.55; }
-  100% { transform: translateX(360%) skewX(-12deg); opacity: 0; }
-}
-
-.floodlight-sweep {
-  animation: floodlight-sweep 7s ease-in-out infinite;
-}
-
 /* Hareketi azalt: CSS animasyonları MotionConfig'in kapsamı dışında, burada durdurulur. */
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-ping,
   .animate-pulse,
   .animate-fade-in,
-  .animate-slide-up,
-  .floodlight-sweep {
+  .animate-slide-up {
     animation: none !important;
   }
   html {

@@ -90,9 +90,9 @@ export default function NavAtmosphere({ theme = "turf" }: NavAtmosphereProps) {
         style={{ background: `linear-gradient(90deg, transparent, ${t.hairline}, transparent)` }}
       />
 
-      {/* 2. Floodlight sweep */}
+      {/* 2. Floodlight sweep (hafifletildi: mix-blend-screen yok, blur-lg) */}
       <m.div
-        className="absolute inset-0 mix-blend-screen blur-2xl"
+        className="absolute inset-0 blur-lg"
         style={{
           backgroundImage: `radial-gradient(42% 130% at 30% 50%, ${t.sweep} 0%, transparent 70%)`,
           backgroundSize: "180% 180%",

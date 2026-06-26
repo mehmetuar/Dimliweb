@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center">
-              <Image src="/icon.png" alt="Dimli" width={48} height={48} className="w-12 h-12 rounded-xl" />
+              <Image src="/icon.png" alt="Dimli" width={48} height={48} unoptimized className="w-12 h-12 rounded-xl" />
             </div>
             <p className="mt-3 text-slate-400 text-sm leading-relaxed">
               Türkiye'nin dijital halı saha platformu. Rakip bul, sahayı kirala, takımını yönet.

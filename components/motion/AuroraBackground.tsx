@@ -1,12 +1,8 @@
-"use client";
-
-import { m, useReducedMotion } from "framer-motion";
-
 /**
- * Hero için yavaş kayan gradient mesh ("aurora").
+ * Hero için statik gradient mesh ("aurora").
  * variant: turf (tüketici/yeşil) | ember (işletme/turuncu).
  * Parent'ı `relative overflow-hidden` olmalı; içerik üstte kalsın diye içerik bloğu `relative`.
- * Reduced-motion'da statik render edilir.
+ * Performans için STATİK (sürekli animasyon yok); hero'daki Parallax glow zaten hareket katıyor.
  */
 interface AuroraBackgroundProps {
   variant?: "turf" | "ember";
@@ -27,7 +23,6 @@ const PALETTES = {
 };
 
 export default function AuroraBackground({ variant = "turf", className = "" }: AuroraBackgroundProps) {
-  const reduce = useReducedMotion();
   const p = PALETTES[variant];
 
   const backgroundImage = [
@@ -37,12 +32,10 @@ export default function AuroraBackground({ variant = "turf", className = "" }: A
   ].join(", ");
 
   return (
-    <m.div
+    <div
       aria-hidden
-      className={`pointer-events-none absolute inset-0 blur-3xl ${className}`}
-      style={{ backgroundImage, backgroundSize: "180% 180%" }}
-      animate={reduce ? undefined : { backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-      transition={reduce ? undefined : { duration: 24, ease: "linear", repeat: Infinity }}
+      className={`pointer-events-none absolute inset-0 blur-2xl ${className}`}
+      style={{ backgroundImage }}
     />
   );
 }

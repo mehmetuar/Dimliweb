@@ -10,7 +10,6 @@ import {
   AuroraBackground,
   Tilt3DCard,
   MagneticButton,
-  FloatChip,
 } from "@/components/motion";
 
 const features = [
@@ -170,8 +169,8 @@ export default function Home() {
           {/* Background aurora + parallax glow */}
           <AuroraBackground variant="turf" />
           <Parallax speed={70} className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-turf-500/5 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-turf-600/3 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-turf-500/5 rounded-full blur-2xl" />
+            <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-turf-600/3 rounded-full blur-2xl" />
           </Parallax>
 
           <div className="relative max-w-6xl mx-auto">
@@ -229,13 +228,8 @@ export default function Home() {
             </div>
 
             {/* Phone showcase */}
-            <FadeIn delay={0.5} className="mt-16 relative">
+            <FadeIn delay={0.5} className="mt-16">
               <PhoneCarousel />
-              {/* Yüzen futbol rozetleri (dekoratif — telefon kenarlarında, label bandından uzak) */}
-              <FloatChip accent="turf" label="⚽ GOL!" index={0} style={{ top: "30%", left: "-1%" }} />
-              <FloatChip accent="turf" label="REZERVE ✓" index={1} style={{ top: "22%", right: "-1%" }} />
-              <FloatChip accent="turf" label="JOKER BULUNDU" index={2} style={{ bottom: "18%", left: "2%" }} />
-              <FloatChip accent="turf" label="4.8 ★ Fair Play" index={3} style={{ bottom: "12%", right: "2%" }} />
             </FadeIn>
           </div>
         </section>

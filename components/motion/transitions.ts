@@ -77,13 +77,3 @@ export const deviceEnterVariants: Variants = {
   }),
 };
 
-/** Yüzen futbol rozeti girişi (FloatChip). `custom={index}` ile kademeli gecikme. */
-export const floatChipVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.6, y: 8 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { ...SPRING_SNAPPY, delay: 0.25 + i * 0.1 },
-  }),
-};

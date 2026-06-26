@@ -16,7 +16,6 @@ import {
   Tilt3DCard,
   MagneticButton,
   Phone3D,
-  FloatChip,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -310,7 +309,7 @@ export default function IsOrtagiPage() {
                     className="flex flex-col items-center gap-2"
                     style={{ transform: i % 2 === 1 ? "translateY(24px)" : undefined }}
                   >
-                    <Phone3D accent="ember" index={i} tiltMax={9} radiusClass="rounded-[2.4rem]">
+                    <Phone3D accent="ember" index={i} tiltMax={9} glow={false} sheen={false} radiusClass="rounded-[2.4rem]">
                       <div
                         className="relative rounded-[2.4rem] overflow-hidden border-[3px] border-slate-700/80 bg-black"
                         style={{
@@ -332,11 +331,6 @@ export default function IsOrtagiPage() {
                   </div>
                 ))}
               </div>
-
-              {/* Yüzen futbol/işletme rozetleri (dekoratif) */}
-              <FloatChip accent="ember" label="YENİ REZERVASYON" index={0} style={{ top: "4%", left: "-2%" }} />
-              <FloatChip accent="ember" label="4.9 ★" index={1} style={{ top: "42%", right: "-4%" }} />
-              <FloatChip accent="ember" label="DOLULUK ↑" index={2} style={{ bottom: "2%", left: "4%" }} />
             </div>
           </div>
         </div>

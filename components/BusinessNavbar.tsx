@@ -6,7 +6,6 @@ import { useScroll, useMotionValueEvent } from "framer-motion";
 import {
   NavAtmosphere,
   ScoreboardLinks,
-  LogoBall,
   KickoffButton,
   type NavItem,
 } from "@/components/motion";
@@ -49,7 +48,8 @@ export default function BusinessNavbar() {
           }`}
         >
           <Link href="/" className="flex items-center" aria-label="Dimli ana sayfa">
-            <LogoBall theme="ember" scrolled={scrolled} />
+            {/* Geçici metin marka — gerçek logo hazır olunca <LogoBall theme="ember" scrolled={scrolled} /> ile değiştir */}
+            <span className="text-2xl md:text-3xl font-black tracking-tight text-white">Dimli</span>
           </Link>
 
           {/* Desktop nav links */}
