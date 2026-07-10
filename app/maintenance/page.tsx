@@ -7,7 +7,7 @@ export default function Maintenance() {
       alignItems: 'center',
       justifyContent: 'center',
       minHeight: '100vh',
-      background: '#0a0f1a',
+      background: '#172236',
       color: '#fff',
       fontFamily: 'system-ui, sans-serif',
       textAlign: 'center',

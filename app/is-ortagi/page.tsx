@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Dimli İş Ortağı — Halı Sahanı Dimli'ye Taşı",
   description:
     "Rezervasyonlarını yönet, gelirinizi takip et, müşteri memnuniyetini artır. Dimli İş Ortağı platformuyla halı sahanı büyüt.",
+  alternates: { canonical: "/is-ortagi" },
 };
 
 
@@ -311,14 +312,14 @@ export default function IsOrtagiPage() {
                   >
                     <Phone3D accent="ember" index={i} tiltMax={9} glow={false} sheen={false} radiusClass="rounded-[2.4rem]">
                       <div
-                        className="relative rounded-[2.4rem] overflow-hidden border-[3px] border-slate-700/80 bg-black"
+                        className="relative rounded-[2.4rem] overflow-hidden border-[3px] border-slate-700/80 bg-pitch-deep"
                         style={{
                           width: 160,
                           height: 347,
-                          boxShadow: "0 0 24px rgba(249,115,22,0.08), 0 16px 40px rgba(0,0,0,0.7)",
+                          boxShadow: "0 0 24px rgba(249,115,22,0.07), 0 14px 34px rgba(0,0,0,0.4)",
                         }}
                       >
-                        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full z-10" />
+                        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-pitch-deep rounded-full z-10" />
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={shot.src}

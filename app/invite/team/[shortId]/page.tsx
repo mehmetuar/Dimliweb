@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-
-const APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.dimli.app";
+import { APP_STORE_URL, GOOGLE_PLAY_URL as PLAY_STORE_URL } from "@/components/StoreBadges";
 
 export const metadata: Metadata = {
   title: "Takım Daveti — Dimli",

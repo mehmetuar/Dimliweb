@@ -1,3 +1,5 @@
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/components/StoreBadges";
+
 interface PricingCardProps {
   pitchCount: number | string;
   planName: string;
@@ -68,13 +70,13 @@ export default function PricingCard({
       {/* Store buttons */}
       <div className="flex flex-col gap-2">
         <a
-          href="https://apps.apple.com"
+          href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all active:scale-95 ${
             popular
               ? "bg-gradient-to-r from-ember-600 to-ember-500 hover:from-ember-500 hover:to-ember-400 text-white shadow-neon-ember-sm"
-              : "bg-black border border-white/15 text-white hover:border-white/30"
+              : "bg-pitch-deep border border-white/15 text-white hover:border-white/30"
           }`}
         >
           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -83,10 +85,10 @@ export default function PricingCard({
           App Store
         </a>
         <a
-          href="https://play.google.com/store"
+          href={GOOGLE_PLAY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-black border border-white/15 text-white hover:border-white/30 transition-all active:scale-95"
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-pitch-deep border border-white/15 text-white hover:border-white/30 transition-all active:scale-95"
         >
           <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none">
             <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" fill="#4285F4"/>

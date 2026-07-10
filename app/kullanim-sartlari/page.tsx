@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Kullanım Şartları — Dimli",
   description:
     "Dimli uygulamasının kullanım şartları, abonelik koşulları ve son kullanıcı lisans sözleşmesi (EULA).",
+  alternates: { canonical: "/kullanim-sartlari" },
 };
 
 const sections = [

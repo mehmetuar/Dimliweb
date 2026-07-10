@@ -34,7 +34,7 @@ export default function AuroraBackground({ variant = "turf", className = "" }: A
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute inset-0 blur-2xl ${className}`}
+      className={`pointer-events-none absolute inset-0 blur-xl ${className}`}
       style={{ backgroundImage }}
     />
   );

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "İletişim — Dimli",
   description:
     "Dimli destek ekibiyle iletişime geç. Uygulama ile ilgili sorularınız, geri bildirimleriniz veya KVKK talepleriniz için buradayız.",
+  alternates: { canonical: "/iletisim" },
 };
 
 const contactItems = [

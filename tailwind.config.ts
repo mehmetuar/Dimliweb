@@ -14,9 +14,11 @@ const config: Config = {
           600: "#16a34a",
         },
         pitch: {
-          DEFAULT: "#0f172a",
-          surface: "#1e293b",
-          deep: "#020617",
+          // Yumuşak koyu (elevated): saf siyah/near-black kalktı, taban açıldı.
+          // Hiyerarşi: deep (inset/çerçeve) < DEFAULT (sayfa) < surface (yükseltilmiş kart).
+          DEFAULT: "#172236",
+          surface: "#223350",
+          deep: "#0e1626",
         },
         ember: {
           400: "#fb923c",
@@ -25,13 +27,16 @@ const config: Config = {
         },
       },
       boxShadow: {
-        neon: "0 0 12px rgba(34,197,94,0.5), 0 0 24px rgba(34,197,94,0.25)",
-        "neon-sm": "0 0 6px rgba(34,197,94,0.4)",
-        "neon-ember": "0 0 12px rgba(249,115,22,0.5), 0 0 24px rgba(249,115,22,0.25)",
-        "neon-ember-sm": "0 0 6px rgba(249,115,22,0.4)",
-        "glow-ember": "0 0 40px rgba(249,115,22,0.25), 0 20px 50px rgba(0,0,0,0.6)",
-        "neon-lift": "0 24px 60px -12px rgba(34,197,94,0.45), 0 0 30px rgba(34,197,94,0.25)",
-        "neon-ember-lift": "0 24px 60px -12px rgba(249,115,22,0.45), 0 0 30px rgba(249,115,22,0.25)",
+        // Daha ince/premium: neon şiddeti düşürüldü, ağır siyah gölge yumuşatıldı.
+        neon: "0 0 10px rgba(34,197,94,0.32), 0 0 20px rgba(34,197,94,0.14)",
+        "neon-sm": "0 0 5px rgba(34,197,94,0.28)",
+        "neon-ember": "0 0 10px rgba(249,115,22,0.32), 0 0 20px rgba(249,115,22,0.14)",
+        "neon-ember-sm": "0 0 5px rgba(249,115,22,0.28)",
+        "glow-ember": "0 0 26px rgba(249,115,22,0.16), 0 14px 34px rgba(0,0,0,0.34)",
+        "neon-lift": "0 18px 44px -14px rgba(34,197,94,0.30), 0 0 20px rgba(34,197,94,0.14)",
+        "neon-ember-lift": "0 18px 44px -14px rgba(249,115,22,0.30), 0 0 20px rgba(249,115,22,0.14)",
+        // Nötr yükseltme gölgesi (kart hover — premium, renk yok).
+        "lift": "0 16px 40px -18px rgba(0,0,0,0.55)",
       },
       keyframes: {
         "fade-in": {
