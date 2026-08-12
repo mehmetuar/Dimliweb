@@ -35,14 +35,16 @@ export default function Navbar() {
         />
       )}
 
+      {/* Tepede: şeffaf degrade perde — 3D sahne navbarın altından akarak görünür.
+          Scroll'da: opak + blur + border (okunurluk). */}
       <nav
-        className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-pitch/95 border-slate-800 shadow-lg shadow-black/30"
-            : "bg-pitch/85 border-slate-800/80"
+            ? "bg-pitch/95 backdrop-blur-md border-b border-slate-800 shadow-lg shadow-black/30"
+            : "bg-gradient-to-b from-pitch-deep/90 via-pitch-deep/40 to-transparent border-b border-transparent"
         }`}
       >
-        <NavAtmosphere theme="turf" />
+        {scrolled && <NavAtmosphere theme="turf" />}
 
         <div
           className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${

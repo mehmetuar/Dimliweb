@@ -55,12 +55,20 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(-6px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // Sinematik hero scroll ipucu: chevronlar sırayla belirip aşağı akar
+        "hint-flow": {
+          "0%": { opacity: "0", transform: "translateY(-4px)" },
+          "35%": { opacity: "1" },
+          "70%": { opacity: "0", transform: "translateY(6px)" },
+          "100%": { opacity: "0", transform: "translateY(6px)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.4s ease-out",
         "slide-up": "slide-up 0.5s cubic-bezier(0.16,1,0.3,1)",
         "scale-in": "scale-in 0.2s ease-out",
         "menu-in": "menu-in 0.22s ease-out",
+        "hint-flow": "hint-flow 1.6s ease-in-out infinite",
       },
     },
   },
