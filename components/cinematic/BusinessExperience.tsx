@@ -105,7 +105,7 @@ export default function BusinessExperience() {
                   <div className="inline-flex items-center gap-6 px-6 py-3 rounded-2xl bg-pitch-deep/60 backdrop-blur-md border border-slate-700/40">
                     <div className="text-center">
                       <p className="text-xl font-black text-ember-400">
-                        <CountUp to={500} suffix="+" />
+                        <CountUp to={10} />
                       </p>
                       <p className="text-[11px] text-slate-400 mt-0.5">Aktif İşletme</p>
                     </div>

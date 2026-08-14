@@ -79,7 +79,7 @@ export default function BusinessStatic() {
                 <div className="flex items-center gap-6 mt-10 pt-10 border-t border-slate-800">
                   <div className="text-center">
                     <p className="text-2xl font-black text-ember-400">
-                      <CountUp to={500} suffix="+" />
+                      <CountUp to={10} />
                     </p>
                     <p className="text-xs text-slate-500 mt-0.5">Aktif İşletme</p>
                   </div>
