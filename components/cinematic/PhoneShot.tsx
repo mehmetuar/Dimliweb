@@ -47,7 +47,6 @@ export default function PhoneShot({
         className="relative rounded-[2.6rem] overflow-hidden border-[3px] border-slate-700/80 bg-pitch-deep"
         style={{ aspectRatio: "640 / 1391", boxShadow: ACCENT_SHADOW[accent] }}
       >
-        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-pitch-deep rounded-full z-10" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover object-top" />
       </div>

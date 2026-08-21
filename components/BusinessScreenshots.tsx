@@ -52,8 +52,6 @@ export default function BusinessScreenshots() {
               className="relative w-[200px] rounded-[2.8rem] bg-pitch-deep border-[3px] border-slate-700/80 overflow-hidden"
               style={{ boxShadow: "0 0 26px rgba(249,115,22,0.06), 0 14px 34px rgba(0,0,0,0.34)" }}
             >
-              {/* Dynamic Island */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[80px] h-[24px] bg-pitch-deep rounded-full z-10" />
               <Image
                 src={src}
                 alt={label}

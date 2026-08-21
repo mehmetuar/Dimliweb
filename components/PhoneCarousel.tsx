@@ -35,13 +35,11 @@ export default function PhoneCarousel() {
               <div className="text-slate-400 text-xs mt-0.5">{desc}</div>
             </div>
 
-            {/* iPhone frame with Dynamic Island */}
+            {/* iPhone frame */}
             <div
               className="relative w-[260px] rounded-[2.8rem] bg-pitch-deep border-[3px] border-slate-700/80 overflow-hidden"
               style={{ boxShadow: "0 0 26px rgba(34,197,94,0.06), 0 14px 34px rgba(0,0,0,0.34)" }}
             >
-              {/* Dynamic Island pill */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[90px] h-[26px] bg-pitch-deep rounded-full z-10" />
               <Image
                 src={src}
                 alt={label}

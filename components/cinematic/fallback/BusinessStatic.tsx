@@ -123,7 +123,6 @@ export default function BusinessStatic() {
                           boxShadow: "0 0 24px rgba(249,115,22,0.07), 0 14px 34px rgba(0,0,0,0.4)",
                         }}
                       >
-                        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-5 bg-pitch-deep rounded-full z-10" />
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={shot.src} alt={shot.label} className="w-full h-full object-cover object-top" />
                       </div>
