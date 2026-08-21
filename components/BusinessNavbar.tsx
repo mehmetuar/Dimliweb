@@ -15,8 +15,14 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Özellikler", href: "#ozellikler" },
   { label: "Fiyatlandırma", href: "#fiyatlandirma" },
   { label: "Nasıl Başlanır?", href: "#nasil-baslanir" },
-  { label: "Ana Sayfa", href: "/", muted: true },
 ];
+
+/** Ana sayfadaki turuncu "Dimli İş Ortağı" pill'inin yeşil aynası — oyuncu tarafına dönüş. */
+const HomeIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+  </svg>
+);
 
 export default function BusinessNavbar() {
   const [open, setOpen] = useState(false);
@@ -57,8 +63,15 @@ export default function BusinessNavbar() {
           {/* Desktop nav links */}
           <ScoreboardLinks theme="ember" items={NAV_ITEMS} />
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-turf-500/10 border border-turf-500/30 text-turf-400 text-sm font-bold hover:bg-turf-500/20 hover:border-turf-500/50 transition-all"
+            >
+              <HomeIcon />
+              Ana Sayfa
+            </Link>
             <KickoffButton>
               <Link
                 href="/iletisim"
@@ -124,27 +137,28 @@ export default function BusinessNavbar() {
                 </svg>
                 Nasıl Başlanır?
               </Link>
-              <Link
-                href="/"
-                className="flex items-center gap-3 py-3.5 text-slate-400 hover:text-white text-base font-semibold transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                <svg className="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Ana Sayfaya Dön
-              </Link>
             </div>
 
             <div className="border-t border-slate-700/60 my-3" />
 
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-gradient-to-r from-ember-600 to-ember-500 text-white text-sm font-bold shadow-neon-ember-sm"
-              onClick={() => setOpen(false)}
-            >
-              İletişime Geç
-            </Link>
+            {/* CTA buttons */}
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-turf-500/10 border border-turf-500/30 text-turf-400 text-sm font-bold hover:bg-turf-500/20 transition-all"
+                onClick={() => setOpen(false)}
+              >
+                <HomeIcon />
+                Ana Sayfa
+              </Link>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-gradient-to-r from-ember-600 to-ember-500 text-white text-sm font-bold shadow-neon-ember-sm"
+                onClick={() => setOpen(false)}
+              >
+                İletişime Geç
+              </Link>
+            </div>
           </div>
         )}
       </nav>
