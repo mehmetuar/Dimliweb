@@ -142,7 +142,7 @@ export default function PlayerExperience() {
             {(p) => (
               <div className="flex flex-col sm:flex-row-reverse items-center gap-8 sm:gap-12">
                 <div>
-                  <Kicker>Rakip Bul</Kicker>
+                  <Kicker>Canlı Takvim</Kicker>
                   <h2 className="text-3xl sm:text-4xl font-black mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.55)]">
                     {FEATURES[0].title}
                   </h2>

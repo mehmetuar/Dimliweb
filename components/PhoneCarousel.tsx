@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const ITEMS = [
   { src: "/screenshots/sahalar.png",       label: "Saha Bul",           desc: "Konumuna yakın sahayı anında keşfet" },
+  { src: "/screenshots/saha_detay.png",    label: "Saha Detayı",        desc: "Ücret, adres ve imkanları tek ekranda gör" },
   { src: "/screenshots/rezervasyon.png",   label: "Rezervasyon",        desc: "Müsait saatleri gör, kolayca rezerve et" },
   { src: "/screenshots/joker_havuzu.png",  label: "Joker Havuzu",       desc: "Eksik oyuncu derdine son, joker bul" },
   { src: "/screenshots/sohbet_kesinlesti.png", label: "Takım Sohbeti",  desc: "Maç durumunu takımınla anlık paylaş" },
